@@ -9,7 +9,6 @@ let quoteQuery =
 function App() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [randomNumber, setRandomNumber] = useState(0);
   const [quotesArray, setQuotesArray] = useState(null);
 
   const fetchQuotes = async url => {
@@ -22,14 +21,8 @@ function App() {
     fetchQuotes(quoteQuery);
   }, [quoteQuery]);
 
-  const generateRandomNumber = () => {
-    let randomInt = Math.floor();
-    setRandomNumber(randomInt);
-  };
-
   const getRandomQuote = () => {
     let randomInteger = Math.floor(quotesArray.length * Math.random());
-    setRandomNumber(randomInteger);
     setQuote(quotesArray[randomInteger].quote);
     setAuthor(quotesArray[randomInteger].author);
   };
